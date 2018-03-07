@@ -25,7 +25,7 @@ add_library(rendercommon STATIC ${COMMON_FILES})
 
 function(add_example BIN_NAME SRC_NAME)
   add_executable(${BIN_NAME} ${SRC_NAME})
-  target_link_libraries(${BIN_NAME} ${EGL_LIBRARIES} ${GLESv2_LIBRARIES} ${X11_X11_LIB} m rendercommon)
+  target_link_libraries(${BIN_NAME} rendercommon ${EGL_LIBRARIES} ${GLESv2_LIBRARIES} ${X11_X11_LIB} m)
   if (ARGV2)
     target_compile_definitions(${BIN_NAME} PRIVATE ${ARGV2})
   endif()
